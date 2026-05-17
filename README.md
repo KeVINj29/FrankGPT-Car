@@ -2,7 +2,7 @@
 
 **FrankGPT-Car** es un proyecto de robótica basado en un chasis de ruedas Mecanum, profundamente modificado y mejorado para ofrecer una experiencia de control total. Este repositorio contiene tanto el firmware (Arduino) del vehículo como el código fuente de **El Chispas**, nuestra aplicación de Android personalizada con estética cyberpunk.
 
-El proyecto original fue reconstruido para integrar transmisión de video en tiempo real, control total mediante gamepads de consola (Bluetooth) y rutinas de movimiento autónomo.
+El proyecto original fue reconstruido para integrar transmisión de video en tiempo real, control total mediante gamepads de consola (Bluetooth) y rutinas de movimiento autónomo (seguidor de líneas/evasor de obstáculos/seguidor de objetos).
 
 ## 🏗️ Arquitectura del Proyecto
 
