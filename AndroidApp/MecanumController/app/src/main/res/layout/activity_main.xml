@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A1A"
+    android:padding="8dp">
+
+    <!-- VIDEO STREAM (CENTRAL BACKGROUND) -->
+    <WebView
+        android:id="@+id/videoStream"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#000000"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- TOP LEFT: CONNECTION & STATUS -->
+    <LinearLayout
+        android:id="@+id/connectionBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConnect"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="BT"
+                android:textColor="#00FF00"
+                android:textSize="9sp"
+                app:cornerRadius="4dp"
+                app:strokeColor="#00FF00"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConnectCam"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="CAM"
+                android:textColor="#00E5FF"
+                android:textSize="9sp"
+                app:cornerRadius="4dp"
+                app:strokeColor="#00E5FF"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCloseCam"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="CLOSE"
+                android:textColor="#FF1744"
+                android:textSize="9sp"
+                android:visibility="gone"
+                app:cornerRadius="4dp"
+                app:strokeColor="#FF1744"
+                app:strokeWidth="1dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="monospace"
+            android:text="SYS_OFFLINE"
+            android:textColor="#00FF00"
+            android:textSize="8sp" />
+    </LinearLayout>
+
+    <!-- RECONNECT BUTTON (GAMEPAD) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnReconnectGamepad"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RECONECTAR BT"
+        android:textColor="#00FF00"
+        android:visibility="gone"
+        app:strokeColor="#00FF00"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TOP RIGHT: EMERGENCY HALT -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStop"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_stop_button"
+        android:text="HALT"
+        android:textColor="#FF1744"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- BOTTOM LEFT: MOVEMENT PAD -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/movementPad"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:background="@drawable/bg_cyber_panel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:padding="0dp"
+            android:text="▲"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#00E5FF" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDown"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:padding="0dp"
+            android:text="▼"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="#00E5FF" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLeft"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:padding="0dp"
+            android:text="◀"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#00E5FF" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRight"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:padding="0dp"
+            android:text="▶"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#00E5FF" />
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnUL" android:layout_width="28dp" android:layout_height="28dp" android:text="↖" android:textSize="8sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnUR" android:layout_width="28dp" android:layout_height="28dp" android:text="↗" android:textSize="8sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnLL" android:layout_width="28dp" android:layout_height="28dp" android:text="↙" android:textSize="8sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent" style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnLR" android:layout_width="28dp" android:layout_height="28dp" android:text="↘" android:textSize="8sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent" style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- BOTTOM RIGHT: AUX MODES -->
+    <LinearLayout
+        android:id="@+id/modesPanel"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_cyber_panel"
+        android:orientation="vertical"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnAvoid" android:layout_width="match_parent" android:layout_height="30dp" android:text="AVOID" android:textSize="8sp" android:insetTop="0dp" android:insetBottom="0dp" style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnFollow" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginTop="4dp" android:text="FOLLOW" android:textSize="8sp" android:insetTop="0dp" android:insetBottom="0dp" style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnLine" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginTop="4dp" android:text="LINE" android:textSize="8sp" android:insetTop="0dp" android:insetBottom="0dp" style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginVertical="4dp" android:background="#1A00E5FF" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnRotL" android:layout_width="0dp" android:layout_height="35dp" android:layout_weight="1" android:text="⟲" android:insetLeft="0dp" android:insetRight="0dp" style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnRotR" android:layout_width="0dp" android:layout_height="35dp" android:layout_marginStart="2dp" android:layout_weight="1" android:text="⟳" android:insetLeft="0dp" android:insetRight="0dp" style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
