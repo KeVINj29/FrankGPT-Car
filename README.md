@@ -20,7 +20,7 @@ A diferencia de un carrito estándar, **FrankGPT-Car** integra las siguientes me
 * **ESP32-CAM:** Añadida para habilitar el streaming de video en tiempo real (Modo FPV).
 * **Sensores Infrarrojos:** Para el modo autónomo de Seguidor de Línea.
 * **Sensor Ultrasónico (HC-SR04):** Para la detección de objetos en los modos Evitador de Obstáculos (Avoid) y Seguimiento (Follow).
-* **Driver de Motores L293D / Shield:** Para la gestión de potencia de los 4 motores de DC.
+* **Driver de Motores L293D / Shield:** Para la gestión de potencia de los 4 motores de DC. 
 
 ## 🚀 Instalación y Despliegue
 
